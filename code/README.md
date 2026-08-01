@@ -37,13 +37,10 @@ python ml/train_model.py
 ```
 
 ### 4. Configurer les variables Airflow
-Dans l'UI Airflow (http://localhost:8080) → Admin → Variables :
-| Clé | Valeur |
-|-----|--------|
-| POSTGRES_CONN | postgresql://airflow:airflow@postgres:5432/fraud_db |
-| MLFLOW_TRACKING_URI | http://mlflow:5000 |
-| SLACK_WEBHOOK_URL | https://hooks.slack.com/... |
-| REPORT_EMAIL | business@company.com |
+Dans l'UI Airflow (http://localhost:8080) mot de passe : airflow identifiant: airflow
+| POSTGRES_CONN | [postgresql://airflow:airflow@postgres:5432/fraud_db |](http://localhost:8085)
+API : SLACK_WEBHOOK_URL | https://huggingface.co/spaces/sdacelo/real-time-fraud-detection |
+
 
 ### 5. Activer les DAGs
 - `fraud_detection_realtime` → s'exécute toutes les minutes
@@ -58,9 +55,3 @@ fraudTest.csv ──► ML Training ──► MLflow Registry
 PostgreSQL ──► DAG Batch (8h) ──► Rapport HTML ──► Email
 ```
 
-## 🎬 Scénario démo vidéo (Vidyard)
-1. `docker-compose up -d` → montrer l'UI Airflow
-2. Déclencher manuellement `fraud_detection_realtime`
-3. Montrer les logs → fraude détectée → notification Slack
-4. Déclencher `fraud_daily_report` → email généré
-5. Vérifier la base PostgreSQL : `SELECT * FROM transactions WHERE is_fraud=1;`
