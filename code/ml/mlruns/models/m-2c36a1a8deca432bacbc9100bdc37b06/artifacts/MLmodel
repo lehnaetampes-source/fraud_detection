@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/lehna/Downloads/Fraud_Detection_Projet_Complet/code/ml/mlruns/models/m-2c36a1a8deca432bacbc9100bdc37b06/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+mlflow_version: 3.6.0
+model_id: m-2c36a1a8deca432bacbc9100bdc37b06
+model_size_bytes: 2142611
+model_uuid: m-2c36a1a8deca432bacbc9100bdc37b06
+prompts: null
+run_id: 5e1784b1080446e7b1d7167962ac18e0
+utc_time_created: '2026-07-07 12:23:33.813387'
